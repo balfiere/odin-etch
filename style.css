@@ -1,25 +1,36 @@
 :root {
-    --size: 40px;
-    --gap: 0px;
+    --containerSize: 900px;
+    --gap: 5px;
     --border: 1px;
 }
 
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 1em;
+}
+
 #container {
-    border: var(--border) solid gray;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     gap: var(--gap);
-    width: calc(
-        (var(--size) * 16) + 
-        (var(--border) * 2 * 16) +
-        (var(--gap) * 15)
-        );
+    width: var(--containerSize);
 }
 
 #container > div {
-    border: var(--border) solid gray;
-    width: var(--size);
-    height: var(--size);
+    border: var(--border) solid lightgray;
 }
 
 .hover {
