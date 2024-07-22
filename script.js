@@ -20,8 +20,20 @@ function makeGrid(gridSize) {
 }
 
 function changeColor(event) {
-    if (event.target.id != "container") {
-        event.target.classList.add("hover");
+    if (event.target.id === "container") {
+        return;
+    } else {
+        color = getComputedStyle(event.target).getPropertyValue("background-color");
+
+        if (color == "rgba(160, 150, 255, 0)") {
+            event.target.style.backgroundColor = "rgba(160, 150, 255, 0.1)";
+        } else if (color == "rgba(160, 150, 255, 1)" || color == "rgb(160, 150, 255)") {
+            return;
+        } else {
+            opacity = parseFloat(color.substring(color.length - 4, color.length - 1));
+            newOpacity = opacity + 0.1;
+            event.target.style.backgroundColor = "rgba(160, 150, 255, " + newOpacity + ")";
+        }
     }
 }
 
@@ -40,7 +52,7 @@ let container = document.querySelector("#container");
 let gridSize = 16;
 makeGrid(gridSize);
 
-container.addEventListener("mouseover", changeColor, false);
+container.addEventListener("mouseover", changeColor);
 
 let resetButton = document.querySelector("#reset");
 

@@ -1,6 +1,6 @@
 :root {
     --containerSize: 900px;
-    --gap: 5px;
+    --gap: 3px;
     --border: 1px;
 }
 
@@ -31,8 +31,5 @@ body {
 
 #container > div {
     border: var(--border) solid lightgray;
-}
-
-.hover {
-    background-color: lavender;
+    background-color: rgb(160, 150, 255, 0);
 }
