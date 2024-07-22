@@ -1,0 +1,26 @@
+:root {
+    --size: 50px;
+    --gap: 5px;
+    --border: 1px;
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+    width: calc(
+        (var(--size) * 16) + 
+        (var(--border) * 2 * 16) +
+        (var(--gap) * 15)
+        );
+}
+
+#container > div {
+    border: var(--border) solid gray;
+    width: var(--size);
+    height: var(--size);
+}
+
+.hover {
+    background-color: lavender;
+}
