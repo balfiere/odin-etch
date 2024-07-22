@@ -1,10 +1,11 @@
 :root {
-    --size: 50px;
-    --gap: 5px;
+    --size: 40px;
+    --gap: 0px;
     --border: 1px;
 }
 
 #container {
+    border: var(--border) solid gray;
     display: flex;
     flex-wrap: wrap;
     gap: var(--gap);

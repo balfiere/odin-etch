@@ -9,3 +9,8 @@ for (let i = 0; i < gridSize; i++) {
     }
 }
 
+function changeColor(event) {
+    event.target.classList.add("hover");
+}
+
+container.addEventListener("mouseover", changeColor);
